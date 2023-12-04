@@ -1,0 +1,215 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  Internal Error (0xc06d007e), pid=31292, tid=0x0000000000004c34
+#
+# JRE version:  (8.0_341-b10) (build )
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.341-b10 mixed mode windows-amd64 compressed oops)
+# Problematic frame:
+# C  [KERNELBASE.dll+0x2cf19]
+#
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000016bfc31b000):  JavaThread "main" [_thread_in_native, id=19508, stack(0x00000021d5100000,0x00000021d5200000)]
+
+siginfo: ExceptionCode=0xc06d007e, ExceptionInformation=0x00000021d51feba0 
+
+Registers:
+RAX=0x0000000134e4ad25, RBX=0x0000000000000000, RCX=0x00000021d4d47000, RDX=0x0000000009000009
+RSP=0x00000021d51feaa0, RBP=0x00000021d51febf8, RSI=0x00007fffce77de9c, RDI=0x0000000000000000
+R8 =0x0000000000000000, R9 =0x0000000000000000, R10=0x0000000000001112, R11=0x0000000000001000
+R12=0x00007fffce786510, R13=0x00007fffce77df28, R14=0x00007fffce786780, R15=0x0000000000000001
+RIP=0x00007ffff349cf19, EFLAGS=0x0000000000000202
+
+Top of Stack: (sp=0x00000021d51feaa0)
+0x00000021d51feaa0:   0000000000000001 0000000000000000
+0x00000021d51feab0:   00007fffce77de9c 00007fffce786510
+0x00000021d51feac0:   00000000c06d007e 0000000000000000
+0x00000021d51fead0:   00007ffff349cf19 0000016b00000001
+0x00000021d51feae0:   00000021d51feba0 0000000000000000
+0x00000021d51feaf0:   0000000000000000 00007ffff349f20a
+0x00000021d51feb00:   0000000000000000 00007ffff5ae6777
+0x00000021d51feb10:   00000021d51feb60 00007fffce77de9c
+0x00000021d51feb20:   0000000000000000 0000000000000000
+0x00000021d51feb30:   0000000000000000 00007ffff349e6b0
+0x00000021d51feb40:   0000000000000000 00007fffce77de9c
+0x00000021d51feb50:   0000000000000000 0000000000000000
+0x00000021d51feb60:   00009ecfc6784895 0000000000000000
+0x00000021d51feb70:   0000000000000000 00007fffce778926
+0x00000021d51feb80:   0000000000000000 00000021d51fecd0
+0x00000021d51feb90:   0000002100000000 00000021d51febd0 
+
+Instructions: (pc=0x00007ffff349cf19)
+0x00007ffff349cef9:   8b d1 44 0f 47 c0 44 89 44 24 38 49 c1 e0 03 e8
+0x00007ffff349cf09:   3a 99 08 00 48 8d 4c 24 20 48 ff 15 3f 81 1b 00
+0x00007ffff349cf19:   0f 1f 44 00 00 48 8b 8c 24 c0 00 00 00 48 33 cc
+0x00007ffff349cf29:   e8 32 89 06 00 48 81 c4 d8 00 00 00 c3 cc 83 64 
+
+
+Register to memory mapping:
+
+RAX=0x0000000134e4ad25 is an unknown value
+RBX=0x0000000000000000 is an unknown value
+RCX=0x00000021d4d47000 is an unknown value
+RDX=0x0000000009000009 is an unknown value
+RSP=0x00000021d51feaa0 is pointing into the stack for thread: 0x0000016bfc31b000
+RBP=0x00000021d51febf8 is pointing into the stack for thread: 0x0000016bfc31b000
+RSI=0x00007fffce77de9c is an unknown value
+RDI=0x0000000000000000 is an unknown value
+R8 =0x0000000000000000 is an unknown value
+R9 =0x0000000000000000 is an unknown value
+R10=0x0000000000001112 is an unknown value
+R11=0x0000000000001000 is an unknown value
+R12=0x00007fffce786510 is an unknown value
+R13=0x00007fffce77df28 is an unknown value
+R14=0x00007fffce786780 is an unknown value
+R15=0x0000000000000001 is an unknown value
+
+
+Stack: [0x00000021d5100000,0x00000021d5200000],  sp=0x00000021d51feaa0,  free space=1018k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [KERNELBASE.dll+0x2cf19]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  java.lang.System.initProperties(Ljava/util/Properties;)Ljava/util/Properties;+0
+j  java.lang.System.initializeSystemClass()V+13
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x0000016ba11be800 JavaThread "Finalizer" daemon [_thread_blocked, id=24028, stack(0x00000021d5e00000,0x00000021d5f00000)]
+  0x0000016ba11bd000 JavaThread "Reference Handler" daemon [_thread_blocked, id=26992, stack(0x00000021d5d00000,0x00000021d5e00000)]
+=>0x0000016bfc31b000 JavaThread "main" [_thread_in_native, id=19508, stack(0x00000021d5100000,0x00000021d5200000)]
+
+Other Threads:
+  0x0000016bffc9d800 VMThread [stack: 0x00000021d5c00000,0x00000021d5d00000] [id=25460]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+heap address: 0x00000005c2a00000, size: 8150 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 3
+Compressed class space size: 1073741824 Address: 0x00000007c0000000
+
+Heap:
+ PSYoungGen      total 152576K, used 2621K [0x0000000716380000, 0x0000000720d80000, 0x00000007c0000000)
+  eden space 131072K, 2% used [0x0000000716380000,0x000000071660f5d0,0x000000071e380000)
+  from space 21504K, 0% used [0x000000071f880000,0x000000071f880000,0x0000000720d80000)
+  to   space 21504K, 0% used [0x000000071e380000,0x000000071e380000,0x000000071f880000)
+ ParOldGen       total 348160K, used 0K [0x00000005c2a00000, 0x00000005d7e00000, 0x0000000716380000)
+  object space 348160K, 0% used [0x00000005c2a00000,0x00000005c2a00000,0x00000005d7e00000)
+ Metaspace       used 1112K, capacity 4480K, committed 4480K, reserved 1056768K
+  class space    used 117K, capacity 384K, committed 384K, reserved 1048576K
+
+Card table byte_map: [0x0000016bfe070000,0x0000016bff060000] byte_map_base: 0x0000016bfb25b000
+
+Marking Bits: (ParMarkBitMap*) 0x00000000650b9030
+ Begin Bits: [0x0000016b8f000000, 0x0000016b96f58000)
+ End Bits:   [0x0000016b96f58000, 0x0000016b9eeb0000)
+
+Polling page: 0x0000016bfc470000
+
+CodeCache: size=245760Kb used=412Kb max_used=412Kb free=245347Kb
+ bounds [0x0000016b80000000, 0x0000016b80270000, 0x0000016b8f000000]
+ total_blobs=103 nmethods=0 adapters=77
+ compilation: enabled
+
+Compilation events (0 events):
+No events
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (2 events):
+Event: 0.053 Thread 0x0000016bfc31b000 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.defineClass(Ljava/lang/String;[BII)Ljava/lang/Class; name or signature does not match> (0x0000000716387cc8) thrown at [C:\jenkins\workspace\8-2-build-windows-x64-cygwin\jdk8u341\2692\hotsp
+Event: 0.053 Thread 0x0000016bfc31b000 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.prefetchRead(Ljava/lang/Object;J)V name or signature does not match> (0x0000000716387fb0) thrown at [C:\jenkins\workspace\8-2-build-windows-x64-cygwin\jdk8u341\2692\hotspot\src\share\vm\pr
+
+Events (10 events):
+Event: 0.053 loading class java/util/HashMap$Node done
+Event: 0.053 loading class sun/misc/VM
+Event: 0.054 loading class sun/misc/VM done
+Event: 0.054 loading class java/util/Hashtable$Entry
+Event: 0.054 loading class java/util/Hashtable$Entry done
+Event: 0.054 loading class java/lang/Math
+Event: 0.054 loading class java/lang/Math done
+Event: 0.054 loading class java/lang/ref/Finalizer$FinalizerThread
+Event: 0.054 loading class java/lang/ref/Finalizer$FinalizerThread done
+Event: 0.054 Thread 0x0000016ba11be800 Thread added: 0x0000016ba11be800
+
+
+Dynamic libraries:
+0x00007ff7be290000 - 0x00007ff7be2d7000 	D:\jdk\jdk8\bin\java.exe
+0x00007ffff5ad0000 - 0x00007ffff5cc8000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00007ffff4bc0000 - 0x00007ffff4c7d000 	C:\Windows\System32\KERNEL32.DLL
+0x00007ffff3470000 - 0x00007ffff3766000 	C:\Windows\System32\KERNELBASE.dll
+0x00007fffeb990000 - 0x00007fffeba20000 	C:\Windows\SYSTEM32\apphelp.dll
+0x00007ffff4560000 - 0x00007ffff460f000 	C:\Windows\System32\ADVAPI32.dll
+0x00007ffff4230000 - 0x00007ffff42ce000 	C:\Windows\System32\msvcrt.dll
+0x00007ffff4680000 - 0x00007ffff471c000 	C:\Windows\System32\sechost.dll
+0x00007ffff42d0000 - 0x00007ffff43f6000 	C:\Windows\System32\RPCRT4.dll
+0x00007ffff4090000 - 0x00007ffff422e000 	C:\Windows\System32\USER32.dll
+0x00007ffff3880000 - 0x00007ffff38a2000 	C:\Windows\System32\win32u.dll
+0x00007ffff4b90000 - 0x00007ffff4bbc000 	C:\Windows\System32\GDI32.dll
+0x00007ffff38b0000 - 0x00007ffff39ca000 	C:\Windows\System32\gdi32full.dll
+0x00007ffff3770000 - 0x00007ffff380d000 	C:\Windows\System32\msvcp_win.dll
+0x00007ffff31b0000 - 0x00007ffff32b0000 	C:\Windows\System32\ucrtbase.dll
+0x00007fffd0300000 - 0x00007fffd059a000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.3636_none_60b6a03d71f818d5\COMCTL32.dll
+0x00007ffff5850000 - 0x00007ffff5880000 	C:\Windows\System32\IMM32.DLL
+0x00007fffcf8d0000 - 0x00007fffcf8e5000 	D:\jdk\jdk8\jre\bin\vcruntime140.dll
+0x00007fffc0f60000 - 0x00007fffc0ffb000 	D:\jdk\jdk8\jre\bin\msvcp140.dll
+0x00000000648d0000 - 0x0000000065131000 	D:\jdk\jdk8\jre\bin\server\jvm.dll
+0x00007ffff5710000 - 0x00007ffff5718000 	C:\Windows\System32\PSAPI.DLL
+0x00007fff9d680000 - 0x00007fff9d689000 	C:\Windows\SYSTEM32\WSOCK32.dll
+0x00007ffff4c90000 - 0x00007ffff4cfb000 	C:\Windows\System32\WS2_32.dll
+0x00007fffde510000 - 0x00007fffde537000 	C:\Windows\SYSTEM32\WINMM.dll
+0x00007fffe8cc0000 - 0x00007fffe8cca000 	C:\Windows\SYSTEM32\VERSION.dll
+0x00007ffff1a00000 - 0x00007ffff1a12000 	C:\Windows\SYSTEM32\kernel.appcore.dll
+0x00007fffd6ad0000 - 0x00007fffd6ae0000 	D:\jdk\jdk8\jre\bin\verify.dll
+0x00007fffce760000 - 0x00007fffce78b000 	D:\jdk\jdk8\jre\bin\java.dll
+0x00007fffcc6e0000 - 0x00007fffcc6f8000 	D:\jdk\jdk8\jre\bin\zip.dll
+
+VM Arguments:
+jvm_args: -Dmaven.multiModuleProjectDirectory=D:\Git\GitCode\github\xuecheng-plus\xuecheng-plus-parent -Dfile.encoding=GB2312 -Dmaven.home=D:\javaDevInstall\apache-maven-3.8.6 -Dclassworlds.conf=D:\javaDevInstall\apache-maven-3.8.6\bin\m2.conf -Dmaven.ext.class.path=D:\IntelliJ IDEA 2022.1.4\plugins\maven\lib\maven-event-listener.jar 
+java_command: org.codehaus.classworlds.Launcher -Didea.version=2022.1.4 -s D:\javaDevInstall\apache-maven-3.8.6\conf\settings.xml -Dmaven.repo.local=D:\javaDevInstall\apache-maven-3.8.6\mvnRepository install --non-recursive
+java_class_path (initial): D:\javaDevInstall\apache-maven-3.8.6\boot\plexus-classworlds-2.6.0.jar;D:\javaDevInstall\apache-maven-3.8.6\boot\plexus-classworlds.license
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=D:\jdk\jdk11
+PATH=D:\VMware Workstation\bin\;D:\NVIDIA GPU Computing Toolkit\CUDA\v12.0\bin;D:\NVIDIA GPU Computing Toolkit\CUDA\v12.0\libnvvp;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;D:\jdk\jdk8\bin;D:\jdk\jdk11\bin;D:\微信web开发者工具\dll;D:\mys;l-8.0.15-winx64\bin;C:\Program Files\dotnet\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;"D:\javaDevInstall\db-derby-10.14.2.0-bin\bin;";D:\Git\Git\cmd;D:\anaconda;D:\anaconda\Scripts;D:\anaconda\Library\mingw-w64\bin;D:\anaconda\Library\usr\bin;D:\anaconda\Library\bin;D:\javaDevInstall\nodejs\;D:\Xshell\;D:\Xftp\;D:\Python311\Scripts\;D:\Python311\;C:\Users\25426\AppData\Local\Microsoft\WindowsApps;D:\mysql-8.0.15-winx64\bin;D:\javaDevInstall\apache-maven-3.8.6\bin;D:\Microsoft VS Code\bin;D:\MinGW\bin;C:\Users\25426\AppData\Roaming\npm;C:\Users\25426\AppData\Local\Pandoc\;D:\HuaweiDev\Microsoft VS Code\bin;D:\ffmpeg;D:\ffmpeg\ffmpeg.exe
+USERNAME=25426
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 158 Stepping 10, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10 , 64 bit Build 19041 (10.0.19041.3636)
+
+CPU:total 12 (initial active 12) (6 cores per cpu, 2 threads per core) family 6 model 158 stepping 10, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, 3dnowpref, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2, adx
+
+Memory: 4k page, physical 33379092k(4864788k free), swap 46627032k(532k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (25.341-b10) for windows-amd64 JRE (1.8.0_341-b10), built on Jun 16 2022 15:51:07 by "java_re" with MS VC++ 15.9 (VS2017)
+
+time: Sun Dec  3 04:02:26 2023
+timezone: Intel64 Family 6 Model 158 Stepping 10, GenuineIntel
+elapsed time: 0.070419 seconds (0d 0h 0m 0s)
+
