@@ -33,52 +33,52 @@ public class CoursePublishController {
     CoursePublishService coursePublishService;
 
 
-//    @ApiOperation("获取课程发布信息")
-//    @ResponseBody
-//    @GetMapping("/course/whole/{courseId}")
-//    public CoursePreviewDto getCoursePublish(@PathVariable("courseId") Long courseId) {
-//        //封装数据
-//        CoursePreviewDto coursePreviewDto = new CoursePreviewDto();
-//
-//        //查询课程发布表
-////        CoursePublish coursePublish = coursePublishService.getCoursePublish(courseId);
-//        //先从缓存查询，缓存中有直接返回，没有再查询数据库
-//        CoursePublish coursePublish = coursePublishService.getCoursePublishCache(courseId);
-//        if(coursePublish == null){
-//            return coursePreviewDto;
-//        }
-//        //开始向coursePreviewDto填充数据
-//        CourseBaseInfoDto courseBaseInfoDto = new CourseBaseInfoDto();
-//        BeanUtils.copyProperties(coursePublish,courseBaseInfoDto);
-//        //课程计划信息
-//        String teachplanJson = coursePublish.getTeachplan();
-//        //转成List<TeachplanDto>
-//        List<TeachplanDto> teachplanDtos = JSON.parseArray(teachplanJson, TeachplanDto.class);
-//        coursePreviewDto.setCourseBase(courseBaseInfoDto);
-//        coursePreviewDto.setTeachplans(teachplanDtos);
-//        return coursePreviewDto;
-//
-//    }
-@ApiOperation("获取课程发布信息")
-@ResponseBody
-@GetMapping("/course/whole/{courseId}")
-public CoursePreviewDto getCoursePublish(@PathVariable("courseId") Long courseId) {
-    //查询课程发布信息
-    CoursePublish coursePublish = coursePublishService.getCoursePublish(courseId);
-    if (coursePublish == null) {
-        return new CoursePreviewDto();
-    }
+    @ApiOperation("获取课程发布信息")
+    @ResponseBody
+    @GetMapping("/course/whole/{courseId}")
+    public CoursePreviewDto getCoursePublish(@PathVariable("courseId") Long courseId) {
+        //封装数据
+        CoursePreviewDto coursePreviewDto = new CoursePreviewDto();
 
-    //课程基本信息
-    CourseBaseInfoDto courseBase = new CourseBaseInfoDto();
-    BeanUtils.copyProperties(coursePublish, courseBase);
-    //课程计划
-    List<TeachplanDto> teachplans = JSON.parseArray(coursePublish.getTeachplan(), TeachplanDto.class);
-    CoursePreviewDto coursePreviewInfo = new CoursePreviewDto();
-    coursePreviewInfo.setCourseBase(courseBase);
-    coursePreviewInfo.setTeachplans(teachplans);
-    return coursePreviewInfo;
-}
+        //查询课程发布表
+//        CoursePublish coursePublish = coursePublishService.getCoursePublish(courseId);
+        //先从缓存查询，缓存中有直接返回，没有再查询数据库
+        CoursePublish coursePublish = coursePublishService.getCoursePublishCache(courseId);
+        if(coursePublish == null){
+            return coursePreviewDto;
+        }
+        //开始向coursePreviewDto填充数据
+        CourseBaseInfoDto courseBaseInfoDto = new CourseBaseInfoDto();
+        BeanUtils.copyProperties(coursePublish,courseBaseInfoDto);
+        //课程计划信息
+        String teachplanJson = coursePublish.getTeachplan();
+        //转成List<TeachplanDto>
+        List<TeachplanDto> teachplanDtos = JSON.parseArray(teachplanJson, TeachplanDto.class);
+        coursePreviewDto.setCourseBase(courseBaseInfoDto);
+        coursePreviewDto.setTeachplans(teachplanDtos);
+        return coursePreviewDto;
+
+    }
+//@ApiOperation("获取课程发布信息")
+//@ResponseBody
+//@GetMapping("/course/whole/{courseId}")
+//public CoursePreviewDto getCoursePublish(@PathVariable("courseId") Long courseId) {
+//    //查询课程发布信息
+//    CoursePublish coursePublish = coursePublishService.getCoursePublish(courseId);
+//    if (coursePublish == null) {
+//        return new CoursePreviewDto();
+//    }
+//
+//    //课程基本信息
+//    CourseBaseInfoDto courseBase = new CourseBaseInfoDto();
+//    BeanUtils.copyProperties(coursePublish, courseBase);
+//    //课程计划
+//    List<TeachplanDto> teachplans = JSON.parseArray(coursePublish.getTeachplan(), TeachplanDto.class);
+//    CoursePreviewDto coursePreviewInfo = new CoursePreviewDto();
+//    coursePreviewInfo.setCourseBase(courseBase);
+//    coursePreviewInfo.setTeachplans(teachplans);
+//    return coursePreviewInfo;
+//}
 
 
     @GetMapping("/coursepreview/{courseId}")

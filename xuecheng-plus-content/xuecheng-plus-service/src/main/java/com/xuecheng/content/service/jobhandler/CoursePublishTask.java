@@ -19,10 +19,8 @@ import org.springframework.stereotype.Component;
 import java.io.File;
 
 /**
- * @author Mr.M
  * @version 1.0
  * @description 课程发布的任务类
- * @date 2023/2/21 16:15
  */
 @Slf4j
 @Component
@@ -47,7 +45,6 @@ public class CoursePublishTask extends MessageProcessAbstract {
         //调用抽象类的方法执行任务
         process(shardIndex,shardTotal, "course_publish",30,60);
 
-
     }
 
     //执行课程发布任务的逻辑,如果此方法抛出异常说明任务执行失败
@@ -56,14 +53,9 @@ public class CoursePublishTask extends MessageProcessAbstract {
         //从mqMessage拿到课程id
         Long courseId = Long.parseLong(mqMessage.getBusinessKey1());
 
-        //课程静态化上传到minio
         generateCourseHtml(mqMessage,courseId);
 
-
-        //向elasticsearch写索引数据
         saveCourseIndex(mqMessage,courseId);
-
-        //向redis写缓存
 
         //返回true表示任务完成
         return true;
